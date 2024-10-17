@@ -39,10 +39,10 @@ export const Game = () => {
                     el.matched ? aux++ : ''
                     aux == cards.length && alert('completed!')
                 });
-            },0)
+            }, 0)
             setTimeout(() => {
                 setSelected(prev => prev = [])
-            }, 500)
+            }, 800)
         }
 
     }, [selected])
@@ -58,7 +58,7 @@ export const Game = () => {
         <div className="memory-game row">
             {cards.map(card => <div
                 key={card.id}
-                className={`col-4  card ${selected.includes(card) || card.matched ? 'visible' : ''}`}
+                className={`col-4  card ${selected.includes(card) || card.matched ? 'visible flip-in-hor-bottom' : 'wobble-hor-bottom'}`}
                 onClick={() => handleCardClick(card)}
             >
                 {selected.includes(card) || card.matched ? card.content : '❓'}
